@@ -4,6 +4,7 @@ import Einstein from "../assets/Images/Einstein.png"
 import Nm from "../assets/Images/Nm.png"
 import SJ from "../assets/Images/SJ.png"
 
+//react implemented
 
  export const celebrities = [
     {
