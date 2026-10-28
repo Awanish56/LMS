@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lms-backend
+  namespace: doctor-appointment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lms-backend
+  template:
+    metadata:
+      labels:
+        app: lms-backend
+    spec:
+      containers:
+        - name: backend
+          image: awanish56/lms-backend:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: lms-config
+            - secretRef:
+                name: lms-secret  
+          
